@@ -149,7 +149,7 @@ app.post('/sendTalentData', upload.single('resume'), async (req, res) => {
     // Send email
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'ak26122k@gmail.com',
+      to: process.env.EMAIL_USER,
       subject: `New Talent Application - ${firstName} ${lastName}`,
       html: createEmailTemplate(formData),
       attachments: req.file ? [{
